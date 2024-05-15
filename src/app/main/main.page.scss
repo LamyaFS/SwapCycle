@@ -5,3 +5,7 @@ ion-tab-bar {
   ion-tab-button[selected] {
     color: #bcf0c8; /* Example color */
   }
+
+  ion-tab-button:hover ion-icon {
+    color: red;
+  }
