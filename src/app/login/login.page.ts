@@ -46,6 +46,8 @@ export class LoginPage implements OnInit {
         console.log(errorCode);
         console.log(errorMessage);
       });
+
+      this.router.navigate(['/main']);
   }
 
   ngOnInit() {
