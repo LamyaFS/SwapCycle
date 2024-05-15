@@ -1,0 +1,7 @@
+{
+  "name": "SwapCycle",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
