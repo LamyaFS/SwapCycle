@@ -1,13 +1,12 @@
 ion-tab-bar {
-    --ion-background-color: #a8bca1; /* Example color */
+    --ion-background-color: #94ae89; /* Example color */
   }
 
-  //ion-tab-button[selected] {
-    //color: #bcf0c8; /* Example color */
-  //}
 
-
+  ion-tab-button ion-icon {
+    color: #fff; /* White color by default */
+  }
 
   ion-tab-button:hover ion-icon {
-    color: #c0da74;
+    color: #434b4b ;
   }
