@@ -1,32 +1,39 @@
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home">
-      <ion-icon name="home-outline"></ion-icon>
-      
-    </ion-tab-button>
-    <ion-tab-button tab="Notifications">
-      <ion-icon name="notifications-outline"></ion-icon>
-      
-    </ion-tab-button>
-    <ion-tab-button tab="Favourites">
-      <ion-icon name="heart-outline"></ion-icon>
-      
-    </ion-tab-button>
-    <ion-tab-button tab="Cart">
-      <ion-icon name="cart-outline"></ion-icon>
-      
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>
 
 <ion-searchbar class="custom-searchbar" style="color: rgba(11, 12, 17, 0.552) !important; width: 80vw; margin: 0 auto;" placeholder="Search"></ion-searchbar>
 
 <ion-content>
-  <swiper-container>
+  <swiper-container
+  (slidechange)="swiperSlideChanged($event)"
+    [loop]="true"
+    [pagination]="true"
+    >
     <swiper-slide>Slide 1</swiper-slide>
     <swiper-slide>Slide 2</swiper-slide>
     <swiper-slide>Slide 3</swiper-slide>
+    
   </swiper-container>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home">
+        <ion-icon name="home-outline"></ion-icon>
+        
+      </ion-tab-button>
+      <ion-tab-button tab="Notifications">
+        <ion-icon name="notifications-outline"></ion-icon>
+        
+      </ion-tab-button>
+      <ion-tab-button tab="Favourites">
+        <ion-icon name="heart-outline"></ion-icon>
+        
+      </ion-tab-button>
+      <ion-tab-button tab="Cart">
+        <ion-icon name="cart-outline"></ion-icon>
+        
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
 </ion-content>
 
 

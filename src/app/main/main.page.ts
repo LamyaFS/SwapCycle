@@ -9,6 +9,10 @@ export class MainPage implements OnInit {
 
   constructor() { }
 
+  swiperSlideChanged(e: any) {
+    console.log('changed: ', e);
+  }
+
   ngOnInit() {
   }
 
