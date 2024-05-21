@@ -1,0 +1,5 @@
+<ion-button (click)="openCart()">
+  <ion-icon name="cart" [ngClass]="{ 'has-badge': itemCount > 0 }"></ion-icon>
+  <ion-badge *ngIf="itemCount > 0">{{ itemCount }}</ion-badge>
+</ion-button>
+
