@@ -20,9 +20,27 @@ export class ApiService {
       name: 'Leo',
       price: 500,
       status: true,
-      rating: 4.7,
+      rating: 5.0,
       cover: 'assets/leo2.png',
       description: 'Tahminas cat'
+    },
+    {
+      id: '3',
+      name: 'Kitty',
+      price: 5000,
+      status: true,
+      rating: 4.9,
+      cover: 'assets/kitty.jpg',
+      description: 'A cat'
+    },
+    {
+      id: '4',
+      name: 'Luna',
+      price: 5000,
+      status: true,
+      rating: 4.9,
+      cover: 'assets/cat.png',
+      description: 'A cat'
     },
     
   ];
