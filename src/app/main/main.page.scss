@@ -1,8 +1,10 @@
 ion-tab-bar {
     --ion-background-color: #94ae89; /* Example color */
   }
-
-
+  
+ion-content{
+  --background: url('../../assets/bgclr.png')  no-repeat center center/cover;
+}
   ion-tab-button ion-icon {
     color: #fff; /* White color by default */
   }

@@ -1,5 +1,5 @@
 .background {
-  //--background: transparent; /* Set background color to transparent */
+  --background: url('../../assets/bg.png'); /* Set background color to transparent */
   background-image: url('../../assets/bg.png'); /* Set background image */
   background-size: fill; /* Cover the entire background */
   background-position: center; /* Center the background image */
@@ -9,4 +9,24 @@
   position: absolute;
   bottom: 20px;
   right: 20px;
+}
+
+ion-button {
+  --background: #375e37;
+  --background-hover: #6b916b;
+  --background-activated: #375e37;
+  --background-focused: #375e37;
+
+  --color: rgb(237, 237, 243);
+
+  --border-radius:10%;
+  --border-color: #375e37;
+  --border-width: 0.1px;
+
+  --box-shadow: 0 2px 6px 0 #375e37;
+
+  --ripple-color: #375e37;
+
+  --padding-top: 10px;
+  --padding-bottom: 10px;
 }
