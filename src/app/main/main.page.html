@@ -1,18 +1,20 @@
 
 <ion-content class="page-content">
-  <ion-searchbar 
-  class="custom-searchbar" 
-  style="color: rgba(11, 12, 17, 0.552) !important; width: 88vw; margin: 0 auto;" 
-  placeholder="Search">
-  <ion-buttons slot="end">
-    <ion-button>
-      <ion-icon slot="icon-only" name="person-circle"></ion-icon>
-    </ion-button>
-    
-  </ion-buttons>
-  
-</ion-searchbar>
-
+  <ion-header>
+    <ion-toolbar>
+      <ion-searchbar 
+        class="custom-searchbar" 
+        style="color: rgba(11, 12, 17, 0.552) !important; width: 88vw; margin: 0 auto;" 
+        placeholder="Search">
+      </ion-searchbar>
+      <ion-buttons slot="end">
+        <ion-button size="large">
+          <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+ 
   <swiper-container
   (slidechange)="swiperSlideChanged($event)"
     [loop]="true"
