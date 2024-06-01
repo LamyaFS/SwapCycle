@@ -1,19 +1,52 @@
-.logo-container {
-    text-align: center;
-    margin: 20px 0;
-  }
-  ion-content {
-    --background: url('../../assets/bgclr.png')  no-repeat center center/cover;} 
-.logo {
-    max-width: 150px;
-    height: auto;
+ion-content {
+    --background: url('../../assets/bgclr.png')  no-repeat center center/cover;
 }
-.custom-button {
-    --ion-color-base: var(--ion-color-custom); /* Use custom color as the base color */
-    --ion-color-base-rgb: 54, 59, 39; /* RGB equivalent of #363b27 */
-    --ion-color-contrast: #ffffff; /* Text color */
-    --ion-color-contrast-rgb: 255, 255, 255; /* RGB equivalent of #ffffff */
-    --ion-color-shade: #2f3421; /* Darker shade of #363b27 */
-    --ion-color-tint: #4f5541; /* Lighter tint of #363b27 */
-  }
-  
+
+.signup-button{
+  --background: #375e37;
+  --background-hover: #6b916b;
+  --background-activated: #375e37;
+  --background-focused: #375e37;
+  --color: rgb(237, 237, 243);
+  --border-color: #375e37;
+  --border-width: 0.1px;
+  --ripple-color: #375e37;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  height: 100vh;     
+    
+}
+
+ion-button{
+  text-transform: initial;
+}
+.title{
+  font-weight: 700;
+  --color:#345434;
+  padding-left: 10px;
+  padding-top: 30px;
+ }
+
+.subtitle{
+  --color:#345434;
+  padding-left: 10px;
+ }
+
+ .email{
+  --color:#5d615d;
+ }
+
+.pass{
+  --color:#5d615d;
+}
+
+.user{
+  --color:#5d615d;
+}
+
