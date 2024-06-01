@@ -2,6 +2,9 @@ import { Component, inject, OnInit } from '@angular/core';
 import { getDatabase, ref, query, orderByChild, equalTo, DataSnapshot, onValue } from "firebase/database";
 import { ApiService } from '../services/api/api.service';
 import { Subscription } from 'rxjs';
+ import {Router} from '@angular/router';
+ 
+ 
 @Component({
   selector: 'app-main',
   templateUrl: './main.page.html',
@@ -10,6 +13,7 @@ import { Subscription } from 'rxjs';
  
 })
 export class MainPage implements OnInit {
+  products: any[] = [];
   user: any;
   items: any[] = [];
   allItems: any[] = [];
@@ -17,15 +21,23 @@ export class MainPage implements OnInit {
   totalItems = 0;
   cartSub!: Subscription;
   private api = inject(ApiService);
+ 
+
+  constructor(private router: Router) {
+    
+  }
+  navigateToProductPage() {
+    this.router.navigate(['/product']);}
 
 
-  constructor() { }
  swiperSlideChanged(e:any){
   console.log('changed: ', e);
  }
   ngOnInit() {
+    
     console.log('ngoninit mainpage');
     this.getItems();
+    
     const userEmail = "user1@example.com"; // Get the logged-in user's email (replace with actual email)
     const db = getDatabase();
     const usersRef = ref(db, 'users');
@@ -35,9 +47,13 @@ export class MainPage implements OnInit {
       snapshot.forEach((childSnapshot) => {
         const userData = childSnapshot.val();
         this.user = userData;
+        
       });
     });
-  }
+    
+    };
+   
+  
   getItems() {
     this.allItems = this.api.items;
     this.items = [...this.allItems];

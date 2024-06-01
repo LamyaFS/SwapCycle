@@ -4,14 +4,20 @@
     <ion-toolbar>
       <ion-searchbar 
         class="custom-searchbar" 
-        style="color: rgba(11, 12, 17, 0.552) !important; width: 88vw; margin: 0 auto;" 
+        style="color: rgba(11, 12, 17, 0.552) !important; width: 8.5cm; margin: 0 auto;" 
         placeholder="Search">
       </ion-searchbar>
-      <ion-buttons slot="end">
+      <ion-buttons slot="start">
         <ion-button size="large">
           <ion-icon slot="icon-only" name="person-circle"></ion-icon>
         </ion-button>
       </ion-buttons>
+      <ion-buttons slot="end" style="margin-right:0.1px;">
+        <ion-button (click)="navigateToProductPage()">
+          <img src="assets/logo/Add.png" style="width: 28px; height: 29px;">
+        </ion-button>
+      </ion-buttons>
+      
     </ion-toolbar>
   </ion-header>
  
@@ -33,7 +39,7 @@
     </div></swiper-slide>
     
   </swiper-container>
-
+  
   <ion-row>
     @for(item of items; track i; let i = $index) {
       <ion-col sizeLg="3" sizeMd="4" sizeSm="6" sizeXl="3" sizeXs="6">
@@ -80,7 +86,7 @@
       </ion-tab-button>
     </ion-tab-bar>
   </ion-tabs>
-
+  
 </ion-content>
 
 

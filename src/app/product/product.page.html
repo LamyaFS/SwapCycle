@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      New Product
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Product Details</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="productForm">
+        <ion-item>
+          <ion-label>Name</ion-label>
+          <ion-input formControlName="name" type="text" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Price</ion-label>
+          <ion-input formControlName="price" type="number" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Description</ion-label>
+          <ion-textarea formControlName="description" required></ion-textarea>
+        </ion-item>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Product Image</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-img [src]="productImage" *ngIf="productImage"></ion-img>
+      <ion-button (click)="takePicture()" expand="block">Take Picture</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button (click)="uploadProduct()" expand="block">Upload Product</ion-button>
+</ion-content>

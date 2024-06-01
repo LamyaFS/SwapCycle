@@ -9,11 +9,13 @@ import { initializeApp as initializeApp_alias, provideFirebaseApp } from '@angul
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import {AngularFireModule} from '@angular/fire/compat';
+import { HttpClientModule } from '@angular/common/http';
+import { Camera } from '@capacitor/camera';
 
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,AngularFireModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,AngularFireModule, HttpClientModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
