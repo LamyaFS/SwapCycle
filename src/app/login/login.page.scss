@@ -7,3 +7,44 @@ flex-center {
   align-items: center;
   height: 100vh; 
 }
+.login-button {
+  --background: #375e37;
+  --background-hover: #6b916b;
+  --background-activated: #375e37;
+  --background-focused: #375e37;
+  --color: rgb(237, 237, 243);
+  --border-color: #375e37;
+  --border-width: 0.1px;
+  --ripple-color: #375e37;
+}
+
+ion-button{
+  text-transform: initial;
+}
+.forgot-button{
+  --color:#375e37;
+}
+ .CreateAcc-button{
+  --color:#375e37;
+ }
+ .title{
+  font-weight: 700;
+ }
+
+ .error-container {
+  display: flex;
+  justify-content: center;  
+  align-items: center;    
+  height: 10vh;            
+  text-align: center;      
+}
+
+.error-message {
+  font-weight: bold;        
+}
+.card-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;     /* Center vertically */
+  height: 100vh;           /* Full height of the viewport */
+}
