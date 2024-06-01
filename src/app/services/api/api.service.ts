@@ -42,7 +42,24 @@ export class ApiService {
       cover: 'assets/cat.png',
       description: 'A cat'
     },
-    
+    {
+    id: '5',
+      name: 'Sofa set',
+      price: 500,
+      status: true,
+      rating: 5.0,
+      cover: 'assets/Products/sofa set.jpg',
+      description: 'Sofa'
+    },
+    {
+      id: '6',
+        name: 'Sofa set',
+        price: 500,
+        status: true,
+        rating: 5.0,
+        cover: 'assets/Products/WM.webp',
+        description: 'Sofa'
+      }
   ];
 
   constructor() { }

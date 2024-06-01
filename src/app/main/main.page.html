@@ -20,7 +20,8 @@
       
     </ion-toolbar>
   </ion-header>
- 
+  
+  
   <swiper-container
   (slidechange)="swiperSlideChanged($event)"
     [loop]="true"
@@ -66,7 +67,8 @@
     }
   </ion-row>
 
-  <ion-tabs >
+  <ion-nav-bar>
+  
     <ion-tab-bar slot="bottom" >
       <ion-tab-button tab="home">
         <ion-icon name="home-outline"></ion-icon>
@@ -85,9 +87,11 @@
         
       </ion-tab-button>
     </ion-tab-bar>
-  </ion-tabs>
   
+</ion-nav-bar>
+
 </ion-content>
+
 
 
 
