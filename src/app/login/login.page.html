@@ -1,7 +1,5 @@
-
 <ion-content class="page-content">
-  
-  <div class="card-container ">
+  <div class="card-container">
     <ion-card>
       
       <ion-card-header>
@@ -11,16 +9,16 @@
     
       <ion-card-content>
         <ion-item>
-          <ion-input label="Email" labelPlacement="floating" fill="fill"  [(ngModel)]="email" type="email"></ion-input>
+          <ion-input class="email" label="Email" labelPlacement="floating" fill="fill"  [(ngModel)]="email" type="email"></ion-input>
         </ion-item>
         
         <ion-item>
-          <ion-input label="Password" labelPlacement="floating" fill="fill"  [(ngModel)]="password" type="password"></ion-input>
+          <ion-input class="pass" label="Password" labelPlacement="floating" fill="fill"  [(ngModel)]="password" type="password"></ion-input>
         </ion-item>
 
         <ion-button expand="block" fill="clear" (click)="navigateToForgotPassword()" class="forgot-button">Forgot Password</ion-button>
         <ion-button expand="block" (click)="login()" class="login-button">Login</ion-button>
-        <ion-button expand="block" fill="clear" (click)="signUp()" class="CreateAcc-button">New User? Create an Account</ion-button> 
+        <ion-button expand="block" fill="clear" (click)="signUp()" class="CreateAcc-button">Create an Account</ion-button> 
         
         <div class="error-container">
           <ion-text color="danger" *ngIf="errorMessage" class="error-message">{{ errorMessage }}</ion-text>

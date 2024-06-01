@@ -1,12 +1,7 @@
 ion-content {
     --background: url('../../assets/bgclr.png')  no-repeat center center/cover;
 }
-flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; 
-}
+
 .login-button {
   --background: #375e37;
   --background-hover: #6b916b;
@@ -23,28 +18,48 @@ ion-button{
 }
 .forgot-button{
   --color:#375e37;
+  padding-top: 8px;
 }
- .CreateAcc-button{
+.CreateAcc-button{
   --color:#375e37;
  }
- .title{
+
+.title{
   font-weight: 700;
+  --color:#345434;
+  padding-left: 8px;
+  padding-top: 30px;
  }
 
- .error-container {
+.subtitle{
+  --color:#345434;
+  padding-left: 8px;
+ }
+
+.email{
+  --color:#5d615d;
+ }
+
+.pass{
+  --color:#5d615d;}
+  
+.error-container {
   display: flex;
   justify-content: center;  
   align-items: center;    
-  height: 10vh;            
+  height: 6vh;            
   text-align: center;      
 }
 
+
 .error-message {
   font-weight: bold;        
+  font-size: small;
 }
+
 .card-container {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center;     /* Center vertically */
-  height: 100vh;           /* Full height of the viewport */
+  justify-content: center; 
+  align-items: center;     
+  height: 100vh;         
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { getDatabase, ref, query, orderByChild, equalTo, DataSnapshot, onValue } from "firebase/database";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-forgotpassword',
@@ -11,7 +12,7 @@ export class ForgotpasswordPage {
   errorMessage: string = '';
   password: string = '';
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   retrievePassword() {
     if (this.email) {
@@ -41,6 +42,8 @@ export class ForgotpasswordPage {
       this.errorMessage = 'Please enter your email';
       this.password = '';
     }
-
+}
+logIn(){
+  this.router.navigate(['/login'])
 }
 }
