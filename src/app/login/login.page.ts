@@ -1,6 +1,7 @@
 // src/app/pages/login/login.page.ts
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { getDatabase, ref, query, orderByChild, equalTo, DataSnapshot , onValue} from "firebase/database";
 
 class UserInfo {
@@ -26,10 +27,18 @@ export class LoginPage {
   email: string = '';
   password: string = '';
   errorMessage: string = '';
+  loginForm: FormGroup;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private formBuilder: FormBuilder) {
+    this.loginForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
+  }
 
   login() {
+    const email = this.loginForm.get('email')?.value;
+    const password = this.loginForm.get('password')?.value;
     if (this.email && this.password) {
       const db = getDatabase();
       const usersRef = ref(db, 'users');
@@ -58,5 +67,8 @@ export class LoginPage {
   }
   navigateToForgotPassword() {
     this.router.navigate(['/forgotpassword']);
+  }
+  signUp(){
+    this.router.navigate(['/signup'])
   }
 }
