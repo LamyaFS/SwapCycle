@@ -12,7 +12,7 @@ export class ApiService {
       price: 1000,
       status: true,
       rating: 4.9,
-      cover: 'assets/PS5.jpeg',
+      cover: 'assets/Products/PS5.jpeg',
       description: 'PS5'
     },
     {
@@ -21,7 +21,7 @@ export class ApiService {
       price: 500,
       status: true,
       rating: 5.0,
-      cover: 'assets/loungeSofa.jpeg',
+      cover: 'assets/Products/loungeSofa.jpeg',
       description: 'Off-white wool lounge sofa'
     },
     {
@@ -30,7 +30,7 @@ export class ApiService {
       price: 5000,
       status: true,
       rating: 4.9,
-      cover: 'assets/woodenDesk.jpeg',
+      cover: 'assets/Products/woodenDesk.jpeg',
       description: 'Dark stained wooden desk with drawer'
     },
     {
@@ -39,7 +39,7 @@ export class ApiService {
       price: 5000,
       status: true,
       rating: 4.9,
-      cover: 'assets/cat.png',
+      cover: 'assets/Products/laptop.jpeg',
       description: 'Lenovo ThinkPad L450-20DT 15.6" Intel Core i5-4300U'
     },
     {
