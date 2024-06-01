@@ -1,20 +1,27 @@
 
-<ion-content class="page-content">
-  <ion-title>Login</ion-title>
-  <div class="login-form">
-    <ion-list>
-      <ion-item lines="none">
-        <ion-label position="floating">Email</ion-label>
-        <ion-input [(ngModel)]="email" type="email"></ion-input>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-label position="floating">Password</ion-label>
-        <ion-input [(ngModel)]="password" type="password"></ion-input>
-      </ion-item>
-    </ion-list>
-    <ion-button expand="block" (click)="login()" class="login-button">Login</ion-button>
-    <ion-button expand="block" fill="clear" (click)="navigateToForgotPassword()" class="forgot-button">Forgot
-      Password</ion-button>
-    <ion-text color="danger" *ngIf="errorMessage" class="error-message">{{ errorMessage }}</ion-text>
+<ion-content [fullscreen]="true"]>
+  <div>
+    <ion-title class="title" size="large"> Welcome Back</ion-title>
+    <p class="sub-title">Sign in to access your Account</p>
   </div>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input
+        type="email"
+        formControlName="email"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input
+        type="password"
+        formControlName="password"
+      ></ion-input>
+    </ion-item>
+    <ion-button expand="full" type="submit" [disabled]="!loginForm.valid">
+      Login
+    </ion-button>
+  </form>
+ 
 </ion-content>
