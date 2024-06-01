@@ -9,9 +9,14 @@
       </ion-searchbar>
 
           <ion-buttons slot="start">
-            <ion-button  >
+            <ion-button  id="click-trigger">
               <ion-icon slot="icon-only" name="person-circle"></ion-icon>
             </ion-button>
+            <ion-popover trigger="click-trigger" trigger-action="click">
+              <ion-content class="ion-padding">
+                
+              </ion-content>
+            </ion-popover>
           </ion-buttons>
 
     
@@ -60,9 +65,6 @@
                 <strong>{{item?.description}}</strong>
               </ion-text>
 
-              <ion-text class="rating" color="dark">
-                {{item?.rating}}
-              </ion-text>
             </p>
           </ion-label>
         </ion-card>
