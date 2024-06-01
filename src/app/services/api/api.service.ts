@@ -8,39 +8,39 @@ export class ApiService {
   items: any[] = [
     {
       id: '1',
-      name: 'Cat',
+      name: 'PS5',
       price: 1000,
       status: true,
       rating: 4.9,
-      cover: 'assets/leo1.png',
-      description: 'Cute cat'
+      cover: 'assets/PS5.jpeg',
+      description: 'PS5'
     },
     {
       id: '2',
-      name: 'Leo',
+      name: 'Lounge sofa',
       price: 500,
       status: true,
       rating: 5.0,
-      cover: 'assets/leo2.png',
-      description: 'Tahminas cat'
+      cover: 'assets/loungeSofa.jpeg',
+      description: 'Off-white wool lounge sofa'
     },
     {
       id: '3',
-      name: 'Kitty',
+      name: 'Wooden desk',
       price: 5000,
       status: true,
       rating: 4.9,
-      cover: 'assets/kitty.jpg',
-      description: 'A cat'
+      cover: 'assets/woodenDesk.jpeg',
+      description: 'Dark stained wooden desk with drawer'
     },
     {
       id: '4',
-      name: 'Luna',
+      name: 'Lenovo Laptop',
       price: 5000,
       status: true,
       rating: 4.9,
       cover: 'assets/cat.png',
-      description: 'A cat'
+      description: 'Lenovo ThinkPad L450-20DT 15.6" Intel Core i5-4300U'
     },
     {
     id: '5',
@@ -53,12 +53,12 @@ export class ApiService {
     },
     {
       id: '6',
-        name: 'Sofa set',
+        name: 'Washing machine',
         price: 500,
         status: true,
         rating: 5.0,
         cover: 'assets/Products/WM.webp',
-        description: 'Sofa'
+        description: 'White automatic washing machine'
       }
   ];
 
