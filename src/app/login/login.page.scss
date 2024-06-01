@@ -1,26 +1,9 @@
 ion-content {
     --background: url('../../assets/bgclr.png')  no-repeat center center/cover;
 }
-/* Customize these styles to match your app's design */
-.header{
-  margin-top: 100px;
-  margin-bottom: 80px;
-  text-align: center;
-
-  .subtitle{
-      color: gray;
-      font-size: 0.9rem;
-  }
-  .title{
-      font-size: 2rem;
-  }
-}
-.forgotpassword{
+flex-center {
   display: flex;
-  justify-content: flex-end;
-  a {
-  font-weight: 400;
-  font-size: 0.8em;
-      text-decoration: none;
-    }
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
 }
