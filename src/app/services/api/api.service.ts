@@ -9,18 +9,18 @@ export class ApiService {
     {
       id: '1',
       name: 'PS5',
-      price: 1000,
+      
       status: true,
-      rating: 4.9,
+      
       cover: 'assets/Products/PS5.jpeg',
       description: 'PS5'
     },
     {
       id: '2',
       name: 'Lounge sofa',
-      price: 500,
+      
       status: true,
-      rating: 5.0,
+      
       cover: 'assets/Products/loungeSofa.jpeg',
       description: 'Off-white wool lounge sofa'
     },
