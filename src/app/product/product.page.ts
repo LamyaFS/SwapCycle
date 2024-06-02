@@ -4,6 +4,7 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { HttpClient } from '@angular/common/http';
 import {Router} from '@angular/router';
 
+
 @Component({
   selector: 'app-product',
   templateUrl: './product.page.html',
