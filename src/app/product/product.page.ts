@@ -11,15 +11,11 @@ import {Router} from '@angular/router';
   styleUrls: ['./product.page.scss'],
 })
 export class ProductPage implements OnInit {
-  productForm: FormGroup;
   productImage: string = '';
+  ProductName: string ='';
+  Condition: string = '';
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
-    this.productForm = this.fb.group({
-      name: ['', Validators.required],
-      description: ['', Validators.required],
-    });
-  }
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit() {}
 
@@ -35,12 +31,6 @@ export class ProductPage implements OnInit {
   }
 
   uploadProduct() {
-    console.log('Upload process completed');
-    if (this.productForm.valid && this.productImage) {
-     
-      
-    } else {
-      console.error('Product form is invalid or product image is missing');
-    }
+    this.router.navigate(['tabs/main'])
   }
 }

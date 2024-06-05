@@ -1,9 +1,10 @@
 /* General Styling */
 ion-content {
-  --background: #f0f4f8;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  --background: url('../../assets/bgclr.png')  no-repeat center center/cover;
 }
 
 ion-header {
@@ -34,11 +35,16 @@ ion-card-header {
 }
 
 ion-card-title {
+  font-weight: bold;
+  padding-top: 15px;
   color: #388e3c;
   font-size: 1.5em;
+  padding-left: 25px;
 }
 
-/* Form Item Styling */
+ion-card-subtitle{
+  padding-left: 26px;
+}
 ion-item {
   --background: #fff;
   --color: #333;
@@ -73,4 +79,4 @@ ion-button {
 
 
 
-/* Image Styling */
+

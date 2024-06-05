@@ -1,35 +1,34 @@
-<ion-header>
-</ion-header>
-
-<ion-content>
+<ion-content class="container">
 
   <ion-card>
-    <ion-card-header>
-      <ion-card-title>Product Image</ion-card-title>
-    </ion-card-header>
+    <ion-card-title>Upload the Image</ion-card-title>
+
     <ion-card-content>
       <ion-img [src]="productImage" *ngIf="productImage"></ion-img>
       <ion-button (click)="takePicture()" expand="block">Take Picture</ion-button>
     </ion-card-content>
-
-   
+    
+    <ion-card-title>Product Details</ion-card-title>
+    <ion-card-subtitle>Enter the product details</ion-card-subtitle>
+    
     <ion-card-content>
-      <ion-card-header>
-        <ion-card-title>Product Details</ion-card-title>
-      </ion-card-header>
-      <form [formGroup]="productForm">
-        <ion-item>
-          <ion-label>Name</ion-label>
-          <ion-input formControlName="name" type="text" required></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label>Description</ion-label>
-          <ion-textarea formControlName="description" required></ion-textarea>
-        </ion-item>
-      </form>
+      <ion-item>
+        <ion-input class="ProductName" label="Product Name" label-placement="floating" fill="outline"  [(ngModel)]="ProductName" type="ProductName"></ion-input>
+      </ion-item>
+
+      <ion-select label="Condition" label-placement="floating" fill="outline" [(ngModel)]="Condition" type="Condition">
+        <ion-select-option value="BrandNew">Brand New: Unopened and in original packaging.</ion-select-option>
+        <ion-select-option value="LikeNew">Like New: Might have slight packaging wear or minimal handling marks.</ion-select-option>
+        <ion-select-option value="WellMaintained">Well-Maintained: Shows some wear but has been well-cared for.</ion-select-option>
+        <ion-select-option value="LikeNew">Like New: Might have slight packaging wear or minimal handling marks.</ion-select-option>
+        <ion-select-option value="WellMaintained">Well-Maintained: Shows some wear but has been well-cared for.</ion-select-option>
+      </ion-select>
+
+
     </ion-card-content>
   
+   
+  
   </ion-card>
-
   <ion-button (click)="uploadProduct()" expand="block">Upload Product</ion-button>
 </ion-content>
