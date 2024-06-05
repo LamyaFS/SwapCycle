@@ -17,7 +17,6 @@ export class ProductPage implements OnInit {
   constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
     this.productForm = this.fb.group({
       name: ['', Validators.required],
-      price: ['', Validators.required],
       description: ['', Validators.required],
     });
   }
@@ -38,7 +37,7 @@ export class ProductPage implements OnInit {
   uploadProduct() {
     console.log('Upload process completed');
     if (this.productForm.valid && this.productImage) {
-      // Pass product image data as query parameter to main page
+     
       
     } else {
       console.error('Product form is invalid or product image is missing');
