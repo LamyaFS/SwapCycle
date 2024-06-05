@@ -14,6 +14,8 @@ export class ProductPage implements OnInit {
   productImage: string = '';
   ProductName: string ='';
   Condition: string = '';
+  TimeSlot: string = '';
+  Day: string='';
 
   constructor(private http: HttpClient, private router: Router) {}
 

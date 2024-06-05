@@ -1,34 +1,53 @@
 <ion-content class="container">
-
+<div class="card-container">
+  <img class="logo" src="../../assets/logo/swaplogo.png">
   <ion-card>
     <ion-card-title>Upload the Image</ion-card-title>
 
     <ion-card-content>
       <ion-img [src]="productImage" *ngIf="productImage"></ion-img>
-      <ion-button (click)="takePicture()" expand="block">Take Picture</ion-button>
+      <ion-button (click)="takePicture()" expand="block">Upload</ion-button>
     </ion-card-content>
     
-    <ion-card-title>Product Details</ion-card-title>
+    <ion-card-title class="Title1">Product Details</ion-card-title>
     <ion-card-subtitle>Enter the product details</ion-card-subtitle>
-    
-    <ion-card-content>
-      <ion-item>
-        <ion-input class="ProductName" label="Product Name" label-placement="floating" fill="outline"  [(ngModel)]="ProductName" type="ProductName"></ion-input>
-      </ion-item>
-
-      <ion-select label="Condition" label-placement="floating" fill="outline" [(ngModel)]="Condition" type="Condition">
-        <ion-select-option value="BrandNew">Brand New: Unopened and in original packaging.</ion-select-option>
-        <ion-select-option value="LikeNew">Like New: Might have slight packaging wear or minimal handling marks.</ion-select-option>
-        <ion-select-option value="WellMaintained">Well-Maintained: Shows some wear but has been well-cared for.</ion-select-option>
-        <ion-select-option value="LikeNew">Like New: Might have slight packaging wear or minimal handling marks.</ion-select-option>
-        <ion-select-option value="WellMaintained">Well-Maintained: Shows some wear but has been well-cared for.</ion-select-option>
-      </ion-select>
 
 
-    </ion-card-content>
+<ion-card-content>
   
-   
+  <ion-input class="ProductName" label="Product Name" label-placement="floating" fill="outline" style="width: 100%" [(ngModel)]="ProductName" type="ProductName"></ion-input>
   
-  </ion-card>
-  <ion-button (click)="uploadProduct()" expand="block">Upload Product</ion-button>
+  <ion-select class= "condition" label="Condition" toggleIcon="caret-down-sharp" label-placement="floating" fill="outline" [(ngModel)]="Condition" type="Condition">
+    <ion-select-option value="BrandNew"> Brand New: Unopened and in original packaging.</ion-select-option>
+    <ion-select-option value="LikeNew"> Like New: Might have slight packaging wear or minimal handling marks.</ion-select-option>
+    <ion-select-option value="WellMaintained"> Well-Maintained: Some wear but fully functional</ion-select-option>
+    <ion-select-option value="Functional"> Functional: Shows moderate wear and tear but is still fully functional.</ion-select-option>
+    <ion-select-option value="PartsOrRepair">For Parts/Repair:  Only suitable for parts or repairs.</ion-select-option>
+  </ion-select>
+
+  <ion-select class="days" label="Days" toggleIcon="caret-down-sharp" label-placement="floating" fill="outline" [(ngModel)]="Day" type="Day" [multiple]="true">
+    <ion-select-option value="slot1"> Mon </ion-select-option>
+    <ion-select-option value="slot2"> Tue </ion-select-option>
+    <ion-select-option value="slot3"> Wed </ion-select-option>
+    <ion-select-option value="slot4"> Thur </ion-select-option>
+    <ion-select-option value="slot4"> Fri </ion-select-option>
+  </ion-select>
+
+  <ion-select class="slot" label="Time Slot" toggleIcon="caret-down-sharp" label-placement="floating" fill="outline" [(ngModel)]="TimeSlot" type="TimeSlot" [multiple]="true">
+    <ion-select-option value="slot1"> 10:00 - 11:00</ion-select-option>
+    <ion-select-option value="slot1"> 11:00 - 12:00</ion-select-option>
+    <ion-select-option value="slot2"> 12:00 - 13:00</ion-select-option>
+    <ion-select-option value="slot1"> 13:00 - 14:00</ion-select-option>
+    <ion-select-option value="slot2"> 14:00 - 15:00</ion-select-option>
+    <ion-select-option value="slot3"> 15:00 - 16:00</ion-select-option>
+    <ion-select-option value="slot4"> 16:00 - 17:00</ion-select-option>
+    <ion-select-option value="slot5"> 17:00 - 18:00</ion-select-option>
+    <ion-select-option value="slot6"> 18:00 - 19:00</ion-select-option>
+    <ion-select-option value="slot7"> 19:00 - 20:00</ion-select-option>
+  </ion-select>
+  <ion-button (click)="uploadProduct()" expand="block">List My Product</ion-button>
+
+</ion-card-content>
+</ion-card>
+</div>
 </ion-content>
