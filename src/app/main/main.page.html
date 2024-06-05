@@ -1,53 +1,45 @@
-
-
-  <ion-header>
+ <div class="container">
     <ion-toolbar>
-      <ion-searchbar 
-        class="custom-searchbar" 
-        style="color: rgba(11, 12, 17, 0.552) !important; width: 8.5cm; margin: 0 auto;" 
-        placeholder="Search">
-      </ion-searchbar>
-
-          <ion-buttons slot="start">
-            <ion-button  id="click-trigger">
-              <ion-icon slot="icon-only" name="person-circle"></ion-icon>
-            </ion-button>
-            <ion-popover trigger="click-trigger" trigger-action="click">
-              <ion-content class="ion-padding">
-                
-              </ion-content>
-            </ion-popover>
-          </ion-buttons>
-
+      <img class="logo" src="../../assets/logo/swaplogo.png">
     
-          
+      <ion-buttons slot="start">
+        <ion-button id='click-trigger'>
+          <img src="assets/logo/user.png" style="width: 28px; height: 27px;">
+        </ion-button>
+        <ion-popover trigger="click-trigger" trigger-action="click">
+          <ion-content class="ion-padding">
+    
+          </ion-content>
+        </ion-popover>
+      </ion-buttons>
+   
       <ion-buttons slot="end" style="margin-right:0.1px;">
         <ion-button (click)="navigateToProductPage()">
           <img src="assets/logo/Add.png" style="width: 28px; height: 29px;">
         </ion-button>
       </ion-buttons>
-      
+
     </ion-toolbar>
-  </ion-header>
+  </div> 
   
   <ion-content class="page-content" >
-  <swiper-container
-  (slidechange)="swiperSlideChanged($event)"
-    [loop]="true"
-    [pagination]="true"
-    >
+  <swiper-container (slidechange)="swiperSlideChanged($event)" [loop]="true" [pagination]="true">
     <swiper-slide>
       <div class="swiper-container">
-        <img src="assets/swaplogo.png" />
+        <img src="assets/mainad.png" />
       </div>
     </swiper-slide>
-    <swiper-slide><div class="swiper-container">
-      <img src="assets/leo1.png" />
-    </div></swiper-slide>
-    <swiper-slide><div class="swiper-container">
-      <img src="assets/leo2.png" />
-    </div></swiper-slide>
-    
+    <swiper-slide>
+      <div class="swiper-container">
+        <img src="assets/ad1.png" />
+      </div>
+    </swiper-slide>
+    <swiper-slide>
+      <div class="swiper-container">
+        <img src="assets/ad2.png" />
+      </div>
+    </swiper-slide>
+
   </swiper-container>
   
   <ion-row>

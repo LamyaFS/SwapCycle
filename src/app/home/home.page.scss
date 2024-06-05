@@ -1,9 +1,8 @@
-.background {
-  --background: url('../../assets/bg.png'); 
-  background-image: url('../../assets/bg.png'); 
-  background-size: fill; 
-  background-position: center; 
+ion-content {
+  --background: url('../../assets/bg.png')  no-repeat center center/cover;
 }
+
+
 
 .icon-container {
   position: absolute;
