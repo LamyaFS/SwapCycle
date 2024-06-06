@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Geolocation } from '@capacitor/geolocation';
 import { getDatabase, ref, set, get, child } from 'firebase/database';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-product',
@@ -12,6 +13,7 @@ import { getDatabase, ref, set, get, child } from 'firebase/database';
 })
 export class ProductPage implements OnInit {
   productImage: string = '';
+  UserName: string='';
   ProductName: string = '';
   Condition: string = '';
   TimeSlot: string = '';
@@ -25,6 +27,7 @@ export class ProductPage implements OnInit {
   display: any;
 
   products: any[] = []; // Array to hold product data
+  Contact: any;
 
   constructor(private http: HttpClient, private router: Router) {
     this.currentLat = 0;
@@ -55,6 +58,8 @@ export class ProductPage implements OnInit {
 
   isFormValid(): boolean {
     return (
+      !!this.UserName &&
+      !!this.Contact &&
       !!this.productImage && 
       !!this.ProductName && 
       !!this.Condition && 
@@ -68,6 +73,8 @@ export class ProductPage implements OnInit {
   async uploadProduct() {
     if (this.isFormValid()) {
       const productData = {
+        seller:this.UserName,
+        contact:this.Contact,
         image: this.productImage,
         name: this.ProductName,
         condition: this.Condition,

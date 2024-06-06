@@ -8,7 +8,12 @@ ion-content {
   align-items: center;
   --background: url('../../assets/bgclr.png')  no-repeat center center/cover;
 }
-
+.UserName{
+  padding-bottom: 10px;
+}
+.Contact{
+  padding-top: 10px;
+}
 .logo{
   padding-top: 30px;
 }
@@ -48,11 +53,11 @@ ion-button {
 //text
 .ProductName{
   padding-top: 125px;
-  
+  padding-bottom: 15px;
 }
 //Dropdown
 .condition{
-  padding-top: 10px;
+  padding-top: 100px;
   
 }
 .days{

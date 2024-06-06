@@ -2,6 +2,13 @@
   <img class="logo" src="../../assets/logo/swaplogo.png">
 
   <ion-card>
+    <ion-card-title class="Title1">Seller Details</ion-card-title>
+    <ion-card-subtitle>Enter the your details</ion-card-subtitle>
+    <ion-card-content>
+      <ion-input class="UserName" label="Your Name" label-placement="floating" fill="outline" style="width: 100%" [(ngModel)]="UserName" type="UserName"> </ion-input>
+      <ion-input class="Contact" label="Contact No" label-placement="floating" fill="outline" style="width: 100%" [(ngModel)]="Contact" type="Contact"> </ion-input>
+    </ion-card-content>
+
     <ion-card-title>Upload the Image</ion-card-title>
 
     <ion-card-content>
@@ -13,6 +20,7 @@
     <ion-card-subtitle>Enter the product details</ion-card-subtitle>
 
     <ion-card-content>
+      
       <ion-input class="ProductName" label="Product Name" label-placement="floating" fill="outline" style="width: 100%" [(ngModel)]="ProductName" type="ProductName"></ion-input>
 
       <ion-select class="condition" label="Condition" toggleIcon="caret-down-sharp" label-placement="floating" fill="outline" [(ngModel)]="Condition" type="Condition">
