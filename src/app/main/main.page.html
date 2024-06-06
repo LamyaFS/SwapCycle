@@ -2,16 +2,7 @@
     <ion-toolbar>
       <img class="logo" src="../../assets/logo/swaplogo.png">
     
-      <ion-buttons slot="start">
-        <ion-button id='click-trigger'>
-          <img src="assets/logo/user.png" style="width: 28px; height: 27px;">
-        </ion-button>
-        <ion-popover trigger="click-trigger" trigger-action="click">
-          <ion-content class="ion-padding">
-    
-          </ion-content>
-        </ion-popover>
-      </ion-buttons>
+      
    
       <ion-buttons slot="end" style="margin-right:0.1px;">
         <ion-button (click)="navigateToProductPage()">
@@ -23,6 +14,19 @@
   </div> 
   
   <ion-content class="page-content" >
+    <ion-buttons slot="start">
+      <ion-button id='click-trigger'>
+        <img src="assets/logo/user.png" style="width: 28px; height: 27px;">
+      </ion-button>
+      <ion-popover trigger="click-trigger" trigger-action="click">
+        <NG-TEMPLATE> 
+        <ion-content >
+          <ion-button>HEY</ion-button>
+  
+        </ion-content>
+      </NG-TEMPLATE>
+      </ion-popover>
+    </ion-buttons>
   <swiper-container (slidechange)="swiperSlideChanged($event)" [loop]="true" [pagination]="true">
     <swiper-slide>
       <div class="swiper-container">
