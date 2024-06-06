@@ -1,7 +1,6 @@
 <ion-content class="container">
-
   <img class="logo" src="../../assets/logo/swaplogo.png">
-  
+
   <ion-card>
     <ion-card-title>Upload the Image</ion-card-title>
 
@@ -13,51 +12,54 @@
     <ion-card-title class="Title1">Product Details</ion-card-title>
     <ion-card-subtitle>Enter the product details</ion-card-subtitle>
 
+    <ion-card-content>
+      <ion-input class="ProductName" label="Product Name" label-placement="floating" fill="outline" style="width: 100%" [(ngModel)]="ProductName" type="ProductName"></ion-input>
 
-<ion-card-content>
-  
-  <ion-input class="ProductName" label="Product Name" label-placement="floating" fill="outline" style="width: 100%" [(ngModel)]="ProductName" type="ProductName"></ion-input>
-  
-  <ion-select class= "condition" label="Condition" toggleIcon="caret-down-sharp" label-placement="floating" fill="outline" [(ngModel)]="Condition" type="Condition">
-    <ion-select-option value="BrandNew"> Brand New: Unopened and in original packaging.</ion-select-option>
-    <ion-select-option value="LikeNew"> Like New: Might have slight packaging wear or minimal handling marks.</ion-select-option>
-    <ion-select-option value="WellMaintained"> Well-Maintained: Some wear but fully functional</ion-select-option>
-    <ion-select-option value="Functional"> Functional: Shows moderate wear and tear but is still fully functional.</ion-select-option>
-    <ion-select-option value="PartsOrRepair">For Parts/Repair:  Only suitable for parts or repairs.</ion-select-option>
-  </ion-select>
+      <ion-select class="condition" label="Condition" toggleIcon="caret-down-sharp" label-placement="floating" fill="outline" [(ngModel)]="Condition" type="Condition">
+        <ion-select-option value="BrandNew"> Brand New: Unopened and in original packaging.</ion-select-option>
+        <ion-select-option value="LikeNew"> Like New: Might have slight packaging wear or minimal handling marks.</ion-select-option>
+        <ion-select-option value="WellMaintained"> Well-Maintained: Some wear but fully functional</ion-select-option>
+        <ion-select-option value="Functional"> Functional: Shows moderate wear and tear but is still fully functional.</ion-select-option>
+        <ion-select-option value="PartsOrRepair">For Parts/Repair: Only suitable for parts or repairs.</ion-select-option>
+      </ion-select>
 
-  <ion-select class="days" label="Days" toggleIcon="caret-down-sharp" label-placement="floating" fill="outline" [(ngModel)]="Day" type="Day" [multiple]="true">
-    <ion-select-option value="slot1"> Mon </ion-select-option>
-    <ion-select-option value="slot2"> Tue </ion-select-option>
-    <ion-select-option value="slot3"> Wed </ion-select-option>
-    <ion-select-option value="slot4"> Thur </ion-select-option>
-    <ion-select-option value="slot4"> Fri </ion-select-option>
-  </ion-select>
+      <ion-select class="days" label="Days" toggleIcon="caret-down-sharp" label-placement="floating" fill="outline" [(ngModel)]="Day" type="Day" [multiple]="true">
+        <ion-select-option value="slot1"> Mon </ion-select-option>
+        <ion-select-option value="slot2"> Tue </ion-select-option>
+        <ion-select-option value="slot3"> Wed </ion-select-option>
+        <ion-select-option value="slot4"> Thur </ion-select-option>
+        <ion-select-option value="slot4"> Fri </ion-select-option>
+      </ion-select>
 
-  <ion-select class="slot" label="Time Slot" toggleIcon="caret-down-sharp" label-placement="floating" fill="outline" [(ngModel)]="TimeSlot" type="TimeSlot" [multiple]="true">
-    <ion-select-option value="slot1"> 10:00 - 11:00</ion-select-option>
-    <ion-select-option value="slot1"> 11:00 - 12:00</ion-select-option>
-    <ion-select-option value="slot2"> 12:00 - 13:00</ion-select-option>
-    <ion-select-option value="slot1"> 13:00 - 14:00</ion-select-option>
-    <ion-select-option value="slot2"> 14:00 - 15:00</ion-select-option>
-    <ion-select-option value="slot3"> 15:00 - 16:00</ion-select-option>
-    <ion-select-option value="slot4"> 16:00 - 17:00</ion-select-option>
-    <ion-select-option value="slot5"> 17:00 - 18:00</ion-select-option>
-    <ion-select-option value="slot6"> 18:00 - 19:00</ion-select-option>
-    <ion-select-option value="slot7"> 19:00 - 20:00</ion-select-option>
-  </ion-select>
-  <ion-button (click)="uploadProduct()" expand="block">List My Product</ion-button>
+      <ion-select class="slot" label="Time Slot" toggleIcon="caret-down-sharp" label-placement="floating" fill="outline" [(ngModel)]="TimeSlot" type="TimeSlot" [multiple]="true">
+        <ion-select-option value="slot1"> 10:00 - 11:00</ion-select-option>
+        <ion-select-option value="slot1"> 11:00 - 12:00</ion-select-option>
+        <ion-select-option value="slot2"> 12:00 - 13:00</ion-select-option>
+        <ion-select-option value="slot1"> 13:00 - 14:00</ion-select-option>
+        <ion-select-option value="slot2"> 14:00 - 15:00</ion-select-option>
+        <ion-select-option value="slot3"> 15:00 - 16:00</ion-select-option>
+        <ion-select-option value="slot4"> 16:00 - 17:00</ion-select-option>
+        <ion-select-option value="slot5"> 17:00 - 18:00</ion-select-option>
+        <ion-select-option value="slot6"> 18:00 - 19:00</ion-select-option>
+        <ion-select-option value="slot7"> 19:00 - 20:00</ion-select-option>
+      </ion-select>
+      
+    <ion-grid>
+      <ion-row>
+        <ion-col>Latitude: </ion-col>
+        <ion-col> {{currentLat}} </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Longitude: </ion-col>
+        <ion-col> {{currentLon}} </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-button (click)="getPosition()" expand="block">Get Location</ion-button>
+    <ion-button (click)="uploadProduct()" expand="block">List My Product</ion-button>
+    </ion-card-content>
 
-  <ion-button (click)="getPosition()"> Product Location</ion-button>
-  
-
-</ion-card-content>
-
-</ion-card>
-
-<ion-card>
-  <ion-card-content><div #map id="map"></div></ion-card-content>
-</ion-card>
-
-
+    <ion-card-content>
+      <div id="map"></div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
