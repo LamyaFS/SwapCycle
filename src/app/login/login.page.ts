@@ -26,7 +26,7 @@ export class LoginPage {
   email: string = '';
   password: string = '';
   errorMessage: string = '';
-  userDataService: any;
+  
 
   constructor(private router: Router) {}
 
