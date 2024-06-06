@@ -50,10 +50,6 @@ const routes: Routes = [
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
-  {
-    path: 'upload',
-    loadChildren: () => import('./upload/upload.module').then( m => m.UploadPageModule)
-  },
 
 
 

@@ -26,27 +26,20 @@
 
   </swiper-container>
   
-  <ion-row>
-    @for(item of items; track i; let i = $index) {
-      <ion-col sizeLg="3" sizeMd="4" sizeSm="6" sizeXl="3" sizeXs="6">
-        <ion-card [routerLink]="['/', 'home', 'gifts', item?.id]">
-          <ion-thumbnail>
-            <ion-img [src]="item?.cover"></ion-img>
-          </ion-thumbnail>
-
-          <ion-label>
-            <ion-text color="dark"><strong>{{item?.name}}</strong></ion-text>
-            <p>
-              <ion-text color="dark">
-                <strong>{{item?.description}}</strong>
-              </ion-text>
-
-            </p>
-          </ion-label>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="6" size-lg="4" *ngFor="let product of products">
+        <ion-card>
+          <img [src]="product.image" *ngIf="product.image">
+          <ion-card-header>
+            <ion-card-title>{{ product.name }}</ion-card-title>
+            <ion-card-subtitle>{{ product.condition }}</ion-card-subtitle>
+          </ion-card-header>
         </ion-card>
       </ion-col>
-    }
-  </ion-row>
+    </ion-row>
+  </ion-grid>
+  
 </ion-content>
 
 
