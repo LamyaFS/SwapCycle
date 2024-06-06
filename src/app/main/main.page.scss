@@ -1,3 +1,12 @@
+.icon-button {
+  padding: 0;
+  margin: 0 10px; // Add some margin if needed
+  width: 30px; // Adjust width as needed
+  height: 30px; // Adjust height as needed
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 ion-tab-bar {
     --ion-background-color: #94ae89;
   }
