@@ -33,10 +33,7 @@ const routes: Routes = [
     path: 'product',
     loadChildren: () => import('./product/product.module').then( m => m.ProductPageModule)
   },
-  {
-    path: 'mycart',
-    loadChildren: () => import('./mycart/mycart.module').then( m => m.MycartPageModule)
-  },
+  
   {
     path: 'notification',
     loadChildren: () => import('./notification/notification.module').then( m => m.NotificationPageModule)
@@ -44,9 +41,14 @@ const routes: Routes = [
   {
     path: 'favourites',
     loadChildren: () => import('./favourites/favourites.module').then( m => m.FavouritesPageModule)
-  },  {
+  },
+  {
     path: 'tabs',
     loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
 
 
