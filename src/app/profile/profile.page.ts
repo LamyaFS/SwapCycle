@@ -7,13 +7,11 @@ import { SharedService } from '../shared.service';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
-  email: string = '';
+ 
 
-  constructor(private sharedService: SharedService) {}  // Inject the shared service
+  constructor() {}  
 
   ngOnInit() {
-    // Retrieve the stored email
-    this.email = this.sharedService.getEmail();
   }
 
 }

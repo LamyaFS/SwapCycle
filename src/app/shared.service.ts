@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SharedService {
-  private email: string = '';
+  
+  private dataSubject: ReplaySubject<string> = new ReplaySubject<string>(1);
 
-  setEmail(email: string) {
-    this.email = email;
+  setData(emailName: string): void {
+    this.dataSubject.next(emailName);
   }
 
-  getEmail(): string {
-    return this.email;
+  getData$(): Observable<string> {
+    return this.dataSubject.asObservable();
   }
+
 }

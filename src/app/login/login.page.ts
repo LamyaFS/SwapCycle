@@ -28,7 +28,7 @@ export class LoginPage {
   errorMessage: string = '';
   
 
-  constructor(private router: Router, private sharedService: SharedService) {}
+  constructor(private router: Router) {}
 
   login() {
     if (this.email && this.password) {
@@ -44,7 +44,7 @@ export class LoginPage {
           if (user.Password === this.password) {
             userFound = true;
             // User found and password matches, navigate to main page
-            this.sharedService.setEmail(this.email);
+            
             this.router.navigate(['tabs/main']);
           }
         });
@@ -64,4 +64,6 @@ export class LoginPage {
   signUp(){
     this.router.navigate(['/signup'])
   }
+
+  
 }
