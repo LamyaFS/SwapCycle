@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { SharedService } from '../shared.service'; 
 
 @Component({
   selector: 'app-profile',
@@ -7,11 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
+ 
 
-  
-
-  constructor() {
-  }
+  constructor() {}  
 
   ngOnInit() {
   }

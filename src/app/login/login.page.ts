@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { getDatabase, ref, query, orderByChild, equalTo, DataSnapshot , onValue} from "firebase/database";
-
+import { SharedService } from '../shared.service';
 
 class UserInfo {
   users: string;
@@ -64,4 +64,6 @@ export class LoginPage {
   signUp(){
     this.router.navigate(['/signup'])
   }
+
+  
 }
