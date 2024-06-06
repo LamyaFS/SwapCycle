@@ -1,26 +1,35 @@
- <div class="container">
+<ion-menu content-id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu Content</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content >This is the menu content.</ion-content>
+</ion-menu>
+ <div class="container" id="main-content">
     <ion-toolbar>
       <img class="logo" src="../../assets/logo/swaplogo.png">
+
       <ion-buttons slot="start">
-        <ion-button id='click-trigger'>
-          <img src="assets/logo/user.png" style="width: 28px; height: 27px;">
-        </ion-button>
-        <ion-popover trigger="click-trigger" trigger-action="click">
-          <NG-TEMPLATE> 
-          <ion-content >
-            <ion-button>HEY</ion-button>
-    
-          </ion-content>
-        </NG-TEMPLATE>
-        </ion-popover>
-      </ion-buttons>
+          <ion-menu-button id="click-trigger">
+            <img src="assets/logo/user.png" style="width: 28px; height: 27px;">
+          </ion-menu-button>
+        </ion-buttons>
+
+        
+  
+
+
       <ion-buttons slot="end" style="margin-right:0.1px;">
         <ion-button (click)="navigateToProductPage()">
           <img src="assets/logo/Add.png" style="width: 28px; height: 29px;">
         </ion-button>
       </ion-buttons>
 
+      
     </ion-toolbar>
+
+
   </div> 
   
   <ion-content class="page-content" >
