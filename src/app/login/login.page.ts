@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { getDatabase, ref, query, orderByChild, equalTo, DataSnapshot , onValue} from "firebase/database";
 
+
 class UserInfo {
   users: string;
   Name: string;
@@ -25,6 +26,7 @@ export class LoginPage {
   email: string = '';
   password: string = '';
   errorMessage: string = '';
+  
 
   constructor(private router: Router) {}
 
@@ -42,6 +44,7 @@ export class LoginPage {
           if (user.Password === this.password) {
             userFound = true;
             // User found and password matches, navigate to main page
+            
             this.router.navigate(['tabs/main']);
           }
         });
