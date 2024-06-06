@@ -42,7 +42,7 @@ export class LoginPage {
           if (user.Password === this.password) {
             userFound = true;
             // User found and password matches, navigate to main page
-            this.router.navigate(['/main']);
+            this.router.navigate(['tabs/main']);
           }
         });
         if (!userFound) {

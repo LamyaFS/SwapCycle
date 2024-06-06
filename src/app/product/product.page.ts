@@ -3,25 +3,38 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { HttpClient } from '@angular/common/http';
 import {Router} from '@angular/router';
+import { Geolocation } from '@capacitor/geolocation';
+import { getDatabase, ref, query, orderByChild, equalTo, DataSnapshot , onValue} from "firebase/database";
 
+declare var google: any;
 @Component({
   selector: 'app-product',
   templateUrl: './product.page.html',
   styleUrls: ['./product.page.scss'],
 })
 export class ProductPage implements OnInit {
-  productForm: FormGroup;
   productImage: string = '';
+  ProductName: string ='';
+  Condition: string = '';
+  TimeSlot: string = '';
+  Day: string='';
+  
+  currentLat: number;
+  currentLon: number;
+  mapElementRef: any;
+  map: any;
+  service: any;
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
-    this.productForm = this.fb.group({
-      name: ['', Validators.required],
-      price: ['', Validators.required],
-      description: ['', Validators.required],
-    });
+  constructor(private http: HttpClient, private router: Router) {
+
+    this.currentLat=0;
+    this.currentLon=0;
+
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.loadMap();
+  }
 
   async takePicture() {
     const image = await Camera.getPhoto({
@@ -34,13 +47,28 @@ export class ProductPage implements OnInit {
     this.productImage = `data:image/jpeg;base64,${image.base64String}`;
   }
 
-  uploadProduct() {
-    console.log('Upload process completed');
-    if (this.productForm.valid && this.productImage) {
-      // Pass product image data as query parameter to main page
-      
-    } else {
-      console.error('Product form is invalid or product image is missing');
+
+  async getPosition()
+  {
+    const coordinates = await Geolocation.getCurrentPosition();
+    this.currentLat = coordinates.coords.latitude;
+    this.currentLon = coordinates.coords.longitude;
+  }
+  async loadMap() {
+    await this.getPosition();
+    let mapOptions = {
+      center: { lat: this.currentLat, lng: this.currentLon },
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
     }
+    this.mapElementRef = document.getElementById("map");
+    this.map = new google.maps.Map(this.mapElementRef, mapOptions);
+    this.service = new google.maps.places.PlacesService(this.map);
+    let currentLocation = { lat: this.currentLat, lng: this.currentLat };
+    
+  }
+  uploadProduct() {
+    
+    this.router.navigate(['tabs/main'])
   }
 }

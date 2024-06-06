@@ -1,53 +1,49 @@
-
-<ion-content class="page-content" >
-  <ion-header>
+ <div class="container">
     <ion-toolbar>
-      <ion-searchbar 
-        class="custom-searchbar" 
-        style="color: rgba(11, 12, 17, 0.552) !important; width: 8.5cm; margin: 0 auto;" 
-        placeholder="Search">
-      </ion-searchbar>
-
-          <ion-buttons slot="start">
-            <ion-button  id="click-trigger">
-              <ion-icon slot="icon-only" name="person-circle"></ion-icon>
-            </ion-button>
-            <ion-popover trigger="click-trigger" trigger-action="click">
-              <ion-content class="ion-padding">
-                
-              </ion-content>
-            </ion-popover>
-          </ion-buttons>
-
+      <img class="logo" src="../../assets/logo/swaplogo.png">
     
-          
+      
+   
       <ion-buttons slot="end" style="margin-right:0.1px;">
         <ion-button (click)="navigateToProductPage()">
           <img src="assets/logo/Add.png" style="width: 28px; height: 29px;">
         </ion-button>
       </ion-buttons>
-      
+
     </ion-toolbar>
-  </ion-header>
+  </div> 
   
+  <ion-content class="page-content" >
+    <ion-buttons slot="start">
+      <ion-button id='click-trigger'>
+        <img src="assets/logo/user.png" style="width: 28px; height: 27px;">
+      </ion-button>
+      <ion-popover trigger="click-trigger" trigger-action="click">
+        <NG-TEMPLATE> 
+        <ion-content >
+          <ion-button>HEY</ion-button>
   
-  <swiper-container
-  (slidechange)="swiperSlideChanged($event)"
-    [loop]="true"
-    [pagination]="true"
-    >
+        </ion-content>
+      </NG-TEMPLATE>
+      </ion-popover>
+    </ion-buttons>
+  <swiper-container (slidechange)="swiperSlideChanged($event)" [loop]="true" [pagination]="true">
     <swiper-slide>
       <div class="swiper-container">
-        <img src="assets/swaplogo.png" />
+        <img src="assets/mainad.png" />
       </div>
     </swiper-slide>
-    <swiper-slide><div class="swiper-container">
-      <img src="assets/leo1.png" />
-    </div></swiper-slide>
-    <swiper-slide><div class="swiper-container">
-      <img src="assets/leo2.png" />
-    </div></swiper-slide>
-    
+    <swiper-slide>
+      <div class="swiper-container">
+        <img src="assets/ad1.png" />
+      </div>
+    </swiper-slide>
+    <swiper-slide>
+      <div class="swiper-container">
+        <img src="assets/ad2.png" />
+      </div>
+    </swiper-slide>
+
   </swiper-container>
   
   <ion-row>
@@ -71,29 +67,6 @@
       </ion-col>
     }
   </ion-row>
-
-  <ion-nav-bar>
-  
-    <ion-tab-bar slot="bottom" >
-      <ion-tab-button tab="home">
-        <ion-icon name="home-outline"></ion-icon>
-        
-      </ion-tab-button>
-      <ion-tab-button tab="Notifications">
-        <ion-icon name="notifications-outline"></ion-icon>
-        
-      </ion-tab-button>
-      <ion-tab-button tab="Favourites">
-        <ion-icon name="heart-outline"></ion-icon>
-        
-      </ion-tab-button>
-      <ion-tab-button tab="Cart">
-        <ion-icon name="cart-outline"></ion-icon>
-        
-      </ion-tab-button>
-    </ion-tab-bar>
-  
-</ion-nav-bar>
-
 </ion-content>
+
 

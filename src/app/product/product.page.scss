@@ -1,0 +1,66 @@
+#map{
+  width: 70%;
+  height: 70%;
+}
+ion-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  --background: url('../../assets/bgclr.png')  no-repeat center center/cover;
+}
+
+.logo{
+  padding-top: 30px;
+}
+
+ion-card-header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+ion-card-title {
+  font-weight: bold;
+  padding-top: 15px;
+  color: #388e3c;
+  font-size: 1.5em;
+  padding-left: 25px;
+}
+
+ion-card-subtitle{
+  padding-left: 26px;
+}
+
+
+ion-label {
+  color: #555;
+  font-weight: bold;
+}
+
+
+ion-button {
+  --background: #375e37;;
+  --color: #fff;
+  margin: 10px 20px;
+  border-radius: 10px 20px;
+  box-shadow: 2px 3px 5px rgba(2, 62, 2, 0.589);
+}
+
+//text
+.ProductName{
+  padding-top: 125px;
+  
+}
+//Dropdown
+.condition{
+  padding-top: 10px;
+  
+}
+.days{
+  padding-top: 10px;
+}
+.slot{
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+

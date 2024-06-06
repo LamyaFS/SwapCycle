@@ -38,7 +38,7 @@ export class MainPage implements OnInit {
     console.log('ngoninit mainpage');
     this.getItems();
     
-    const userEmail = "user1@example.com"; // Get the logged-in user's email (replace with actual email)
+    const userEmail = "user1@example.com"; 
     const db = getDatabase();
     const usersRef = ref(db, 'users');
     const userQuery = query(usersRef, orderByChild('email'), equalTo(userEmail));
