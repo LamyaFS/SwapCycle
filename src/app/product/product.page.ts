@@ -33,7 +33,7 @@ export class ProductPage implements OnInit {
   }
 
   ngOnInit() {
-    this.loadMap();
+    
   }
 
   async takePicture() {
@@ -54,26 +54,7 @@ export class ProductPage implements OnInit {
     this.currentLat = coordinates.coords.latitude;
     this.currentLon = coordinates.coords.longitude;
   }
-  async loadMap() {
-    await this.getPosition();
 
-    let mapOptions = {
-      center: { lat: this.currentLat, lng: this.currentLon },
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-
-    this.mapElementRef = document.getElementById("map");
-    this.map = new google.maps.Map(this.mapElementRef, mapOptions);
-    this.service = new google.maps.places.PlacesService(this.map);
-
-    let currentLocation = { lat: this.currentLat, lng: this.currentLon };
-    let marker = new google.maps.Marker({
-      position: currentLocation,
-      map: this.map,
-      title: 'Current Location'
-    });
-  }
   isFormValid(): boolean {
     return (
       !!this.productImage && 
@@ -98,12 +79,10 @@ export class ProductPage implements OnInit {
         longitude: this.currentLon,
       };
 
-      // Save the product data to the database
       const db = getDatabase();
       const newProductRef = ref(db, 'products/' + this.ProductName);
       await set(newProductRef, productData);
 
-      // Navigate to the main page
       this.router.navigate(['tabs/main']);
     } else {
       alert('Please fill in all the details');

@@ -16,10 +16,6 @@ const routes: Routes = [
         loadChildren: () => import('../main/main.module').then( m => m.MainPageModule)
       },
       {
-        path: 'mycart',
-        loadChildren: () => import('../mycart/mycart.module').then( m => m.MycartPageModule)
-      },
-      {
         path: 'notification',
         loadChildren: () => import('../notification/notification.module').then( m => m.NotificationPageModule)
       },
