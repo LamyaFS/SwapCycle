@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { getDatabase, ref, query, orderByChild, equalTo, DataSnapshot , onValue} from "firebase/database";
-
+import { SharedService } from '../shared.service';
 
 class UserInfo {
   users: string;
@@ -28,7 +28,7 @@ export class LoginPage {
   errorMessage: string = '';
   
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private sharedService: SharedService) {}
 
   login() {
     if (this.email && this.password) {
@@ -44,7 +44,7 @@ export class LoginPage {
           if (user.Password === this.password) {
             userFound = true;
             // User found and password matches, navigate to main page
-            
+            this.sharedService.setEmail(this.email);
             this.router.navigate(['tabs/main']);
           }
         });
