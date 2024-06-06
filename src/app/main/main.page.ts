@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { getDatabase, ref, query, orderByChild, equalTo, DataSnapshot, onValue } from "firebase/database";
+import { getDatabase, ref, query, orderByChild, equalTo, DataSnapshot, onValue,get } from "firebase/database";
  import {Router} from '@angular/router';
  
  
@@ -23,7 +23,25 @@ export class MainPage implements OnInit {
   swiperSlideChanged(e: any) {
     console.log('changed: ', e);
   }
+
+  async loadProducts() {
+    const db = getDatabase();
+    const productsRef = ref(db, 'products/');
+    const snapshot = await get(productsRef);
+
+    if (snapshot.exists()) {
+      this.products = [];
+      snapshot.forEach((childSnapshot) => {
+        this.products.push(childSnapshot.val());
+      });
+      console.log('Loaded Products: ', this.products); // Log loaded products
+    } else {
+      console.log('No products available');
+    }
+  }
+
   ngOnInit() {
+    this.loadProducts();
   }
  
 }

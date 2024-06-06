@@ -44,6 +44,7 @@ export class ProductPage implements OnInit {
     });
 
     this.productImage = `data:image/jpeg;base64,${image.base64String}`;
+    console.log('Captured Image: ', this.productImage);
   }
 
   async getPosition() {
@@ -79,6 +80,7 @@ export class ProductPage implements OnInit {
       const db = getDatabase();
       const newProductRef = ref(db, 'products/' + this.ProductName);
       await set(newProductRef, productData);
+      this.products.push(productData);
 
       this.router.navigate(['tabs/main']);
     } else {
