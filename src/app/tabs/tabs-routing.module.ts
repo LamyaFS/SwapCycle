@@ -19,8 +19,8 @@ const routes: Routes = [
         loadChildren: () => import('../notification/notification.module').then( m => m.NotificationPageModule)
       },
       {
-        path: 'favourites',
-        loadChildren: () => import('../favourites/favourites.module').then( m => m.FavouritesPageModule)
+        path: 'product',
+        loadChildren: () => import('../product/product.module').then( m => m.ProductPageModule)
       },
       {
         path: 'profile',
