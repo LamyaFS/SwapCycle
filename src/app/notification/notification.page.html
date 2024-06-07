@@ -1,5 +1,24 @@
-<ion-content class="page-content">
-  <div class="card-container">
-    
-  </div>
-</ion-content>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/main"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Notifications</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+    <div *ngFor="let notification of notifications"class="notification-item">
+      <ng-container *ngIf="notification.message">
+        <ion-label>{{ notification.message }}</ion-label>
+      </ng-container>
+      
+    </div>
+
+    <ion-button *ngIf="notifications.length > 0" (click)="clearNotifications()" expand="block" color="danger">
+      Clear Notifications
+    </ion-button>
+  </ion-content>
+  
+

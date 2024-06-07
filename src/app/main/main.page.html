@@ -1,9 +1,16 @@
 <div class="container" id="main-content">
   <ion-toolbar class="logo">
     <img src="../../assets/logo/swaplogo.png">
-    
+    <ion-buttons slot="end">
+      <ion-button (click)="navigateToNotificationPage()" style="position: relative;">
+        <img src="assets/logo/bell.png" style="width: 37px; height: 37px;">
+        <ion-badge *ngIf="notifications.length > 0" color="danger" class="notification-badge">
+          {{ notifications.length }}
+        </ion-badge>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
-</div> 
+</div>
 <ion-modal [isOpen]="isModalOpen">
   <ng-template>
     <ion-header>
@@ -38,7 +45,7 @@
           <ion-col> {{ selectedProduct.timeSlot }}  </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col class="T">Available Days: </ion-col>
+          <ion-col class="T" >Available Days: </ion-col>
           <ion-col> {{ selectedProduct.day }}  </ion-col>
         </ion-row>
         <ion-row>

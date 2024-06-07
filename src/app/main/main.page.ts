@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { getDatabase, ref, get, push, set, remove } from 'firebase/database';
+import { getDatabase, ref, get, push, set, remove, onValue } from 'firebase/database';
 import { Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { Geolocation } from '@capacitor/geolocation';
@@ -15,11 +15,12 @@ export class MainPage implements OnInit {
   products: any[] = [];
   isModalOpen = false;
   selectedProduct: any = null;
+  notifications: any[] = [];
 
   constructor(private router: Router) {}
 
-  navigateToProductPage() {
-    this.router.navigate(['/product']);
+  navigateToNotificationPage() {
+    this.router.navigate(['/notification']);
   }
 
   swiperSlideChanged(e: any) {
@@ -46,6 +47,7 @@ export class MainPage implements OnInit {
 
   ngOnInit() {
     this.loadProducts();
+    this.fetchNotifications();
   }
 
   setOpen(isOpen: boolean) {
@@ -86,6 +88,24 @@ export class MainPage implements OnInit {
         // Navigate back to main page even if there's an error
         this.router.navigate(['tabs/main']);
       });
+  }
+  fetchNotifications() {
+    const db = getDatabase();
+    const notificationsRef = ref(db, 'notifications');
+    onValue(notificationsRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        this.notifications = Object.values(data);
+        this.notifications = this.notifications.filter(notification =>
+          notification.message && notification.timestamp
+        );
+      }
+    });
+  }
+  clearNotifications() {
+    const db = getDatabase();
+    const notificationsRef = ref(db, 'notifications');
+    remove(notificationsRef);
   }
   
 }
