@@ -9,6 +9,26 @@
       </ion-buttons>
     </ion-toolbar>
   </div> 
+
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Modal</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false)">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni illum quidem recusandae ducimus quos
+          reprehenderit. Veniam, molestias quos, dolorum consequuntur nisi deserunt omnis id illo sit cum qui. Eaque,
+          dicta.
+        </p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
   
   <ion-content class="page-content" >
    
@@ -34,7 +54,11 @@
     <ion-row>
       <ion-col size="6" size-md="7" size-lg="8" *ngFor="let product of products">
         <ion-card>
-          <ion-button class="detail-button" fill="clear"><ion-icon name="bag"></ion-icon></ion-button>
+          <ion-button id="click-trigger" class="detail-button" fill="clear" (click)="setOpen(true)">
+            <ion-icon name="bag"></ion-icon>
+          </ion-button>
+          
+
           <ion-img [src]="product.image" alt="Product Image" class="product-image"></ion-img>
           
           <ion-card-header>

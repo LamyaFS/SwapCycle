@@ -44,4 +44,9 @@ export class MainPage implements OnInit {
     this.loadProducts();
   }
  
+  isModalOpen = false;
+
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+  }
 }
