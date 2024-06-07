@@ -4,3 +4,40 @@ ion-content {
     align-items: center;
     --background: url('../../assets/bgclr.png')  no-repeat center center/cover;
   }
+
+  .logout-button {
+    --background: #375e37;
+    --background-hover: #6b916b;
+    --background-activated: #375e37;
+    --background-focused: #375e37;
+    --color: rgb(237, 237, 243);
+    --border-color: #375e37;
+    --border-width: 0.1px;
+    --ripple-color: #375e37;
+  }
+  ion-button{
+    text-transform: initial;
+  }
+
+  ion-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .user-info {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .welcome {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .username {
+    font-size: 18px;
+    color: #555;
+    margin: 0;
+  }

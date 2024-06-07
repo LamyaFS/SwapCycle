@@ -1,12 +1,17 @@
 <ion-content class="container">
     <img class="logo" src="../../assets/logo/swaplogo.png">
     <ion-card>
-    <ion-card-content>
-      
-      <ion-card-title class="Title">User</ion-card-title>
-      <ion-card-subtitle>Welcome, Tala !</ion-card-subtitle>
-  
-    </ion-card-content>
+        <ion-card-content>
+            <div *ngIf="user" class="user-info">
+                <p class="welcome">Welcome {{ user.Name }}!</p>
+                <p class="username">You're logged in with {{user.Email}}</p>
+                
+              </div>
+              <div *ngIf="!user">
+                <p>User not logged in</p>
+              </div>
+              <ion-button expand="full" (click)="logout()" class="logout-button">Logout</ion-button>
+        </ion-card-content>
     </ion-card>
 </ion-content>
 

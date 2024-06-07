@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { getDatabase, ref, query, orderByChild, equalTo, DataSnapshot , onValue} from "firebase/database";
-import { SharedService } from '../shared.service';
+
 
 class UserInfo {
   users: string;
@@ -44,7 +44,8 @@ export class LoginPage {
           if (user.Password === this.password) {
             userFound = true;
             // User found and password matches, navigate to main page
-            
+            localStorage.setItem('loggedInUser', JSON.stringify(user));
+            console.log('User stored in local storage:', user);
             this.router.navigate(['tabs/main']);
           }
         });
