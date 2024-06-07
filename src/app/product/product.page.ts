@@ -3,8 +3,8 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Geolocation } from '@capacitor/geolocation';
-import { getDatabase, ref, set, get, child, push } from 'firebase/database';
-
+import { getDatabase, ref, set, get, child } from 'firebase/database';
+declare var google: any;
 
 @Component({
   selector: 'app-product',
@@ -36,6 +36,7 @@ export class ProductPage implements OnInit {
 
   ngOnInit() {
     this.loadProducts();
+    this.loadMap();
   }
 
   async takePicture() {
@@ -55,6 +56,30 @@ export class ProductPage implements OnInit {
     this.currentLat = coordinates.coords.latitude;
     this.currentLon = coordinates.coords.longitude;
   }
+
+  async loadMap() {
+    await this.getPosition();
+    let mapOptions = {
+      center: { lat: this.currentLat, lng: this.currentLon },
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    this.mapElementRef = document.getElementById("map");
+    this.map = new google.maps.Map(this.mapElementRef, mapOptions);
+   
+    const image = "";
+   
+    this.addMarker(this.currentLat, this.currentLon);
+   
+  }
+  addMarker(latitude:number, longitude:number){
+    const marker = new google.maps.Marker({
+      position:{lat: latitude, lng:longitude},
+      map: this.map,
+
+    });
+  return marker;
+  }  
 
   isFormValid(): boolean {
     return (
