@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Geolocation } from '@capacitor/geolocation';
 import { getDatabase, ref, set, get, child } from 'firebase/database';
-import { Storage } from '@ionic/storage-angular';
+
 
 @Component({
   selector: 'app-product',
