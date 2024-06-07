@@ -3,7 +3,7 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Geolocation } from '@capacitor/geolocation';
-import { getDatabase, ref, set, get, child } from 'firebase/database';
+import { getDatabase, ref, set, get, child,push } from 'firebase/database';
 declare var google: any;
 
 @Component({
