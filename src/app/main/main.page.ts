@@ -18,8 +18,8 @@ export class MainPage implements OnInit {
 
   constructor(private router: Router) {}
 
-  navigateToProductPage() {
-    this.router.navigate(['/product']);
+  navigateToNotificationPage() {
+    this.router.navigate(['/notification']);
   }
 
   swiperSlideChanged(e: any) {

@@ -1,10 +1,13 @@
 <div class="container" id="main-content">
   <ion-toolbar class="logo">
     <img src="../../assets/logo/swaplogo.png">
-    
-    
+    <ion-buttons slot="end" style="margin-right:0.1px;">
+      <ion-button (click)="navigateToNotificationPage()">
+        <img src="assets/logo/bell.png" style="width: 37px; height: 37px;">
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
-</div> 
+</div>
 <ion-modal [isOpen]="isModalOpen">
   <ng-template>
     <ion-header>

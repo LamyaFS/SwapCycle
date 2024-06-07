@@ -3,7 +3,7 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Geolocation } from '@capacitor/geolocation';
-import { getDatabase, ref, set, get, child } from 'firebase/database';
+import { getDatabase, ref, set, get, child, push } from 'firebase/database';
 
 
 @Component({
@@ -87,8 +87,14 @@ export class ProductPage implements OnInit {
       const db = getDatabase();
       const newProductRef = ref(db, 'products/' + this.ProductName);
       await set(newProductRef, productData);
+      
       this.products.push(productData);
-
+      const notification = {
+        message: `New product uploaded by ${this.UserName}: ${this.ProductName}`,
+        productId: this.ProductName,
+        timestamp: new Date().toISOString(),
+      };
+      await this.addNotification(notification);
       this.router.navigate(['tabs/main']);
     } else {
       alert('Please fill in all the details');
@@ -109,5 +115,10 @@ export class ProductPage implements OnInit {
     } else {
       console.log('No products available');
     }
+  }
+  async addNotification(notification: { message: string; timestamp: string }) {
+    const db = getDatabase();
+    const notificationsRef = ref(db, 'notifications');
+    await push(notificationsRef, notification);
   }
 }
