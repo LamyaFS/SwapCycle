@@ -1,9 +1,12 @@
 <div class="container" id="main-content">
   <ion-toolbar class="logo">
     <img src="../../assets/logo/swaplogo.png">
-    <ion-buttons slot="end" style="margin-right:0.1px;">
-      <ion-button (click)="navigateToNotificationPage()">
+    <ion-buttons slot="end">
+      <ion-button (click)="navigateToNotificationPage()" style="position: relative;">
         <img src="assets/logo/bell.png" style="width: 37px; height: 37px;">
+        <ion-badge *ngIf="notifications.length > 0" color="danger" class="notification-badge">
+          {{ notifications.length }}
+        </ion-badge>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
