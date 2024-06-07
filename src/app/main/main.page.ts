@@ -3,7 +3,7 @@ import { getDatabase, ref, get, push, set, remove } from 'firebase/database';
 import { Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { Geolocation } from '@capacitor/geolocation';
-declare var google: any;
+
  
 
 @Component({
@@ -87,4 +87,5 @@ export class MainPage implements OnInit {
         this.router.navigate(['tabs/main']);
       });
   }
+  
 }

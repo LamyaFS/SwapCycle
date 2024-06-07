@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Geolocation } from '@capacitor/geolocation';
 import { getDatabase, ref, set, get, child } from 'firebase/database';
-
+declare var google: any;
 
 @Component({
   selector: 'app-product',
@@ -36,6 +36,7 @@ export class ProductPage implements OnInit {
 
   ngOnInit() {
     this.loadProducts();
+    this.loadMap();
   }
 
   async takePicture() {
@@ -55,6 +56,34 @@ export class ProductPage implements OnInit {
     this.currentLat = coordinates.coords.latitude;
     this.currentLon = coordinates.coords.longitude;
   }
+
+  async loadMap() {
+    await this.getPosition();
+    let mapOptions = {
+      center: { lat: this.currentLat, lng: this.currentLon },
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    this.mapElementRef = document.getElementById("map");
+    this.map = new google.maps.Map(this.mapElementRef, mapOptions);
+   
+    const image = "";
+   
+    this.addMarker(this.currentLat, this.currentLon, "My Location", "https://imgtr.ee/images/2024/06/04/b6ad2f1b595dfd441da35e3f7423d87a.png%22");
+   
+    this.service = new google.maps.places.PlacesService(this.map);
+   
+    let currentLocation = { lat: this.currentLat, lng: this.currentLon };
+    
+  }
+  addMarker(latitude:number, longitude:number, placeName:string, image:any){
+    const marker = new google.maps.Marker({
+      position:{lat: latitude, lng:longitude},
+      map: this.map,
+      icon:image
+    });
+  return marker;
+  }  
 
   isFormValid(): boolean {
     return (
