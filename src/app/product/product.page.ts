@@ -26,7 +26,7 @@ export class ProductPage implements OnInit {
   service: any;
   display: any;
 
-  products: any[] = []; // Array to hold product data
+  products: any[] = []; //  Array to hold product data
   Contact: any;
 
   constructor(private http: HttpClient, private router: Router) {
