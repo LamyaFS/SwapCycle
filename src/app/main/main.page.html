@@ -1,75 +1,101 @@
+<div class="container" id="main-content">
+  <ion-toolbar>
+    <img class="logo" src="../../assets/logo/swaplogo.png">
+    <ion-buttons slot="end" style="margin-right:0.1px;">
+      <ion-button (click)="navigateToProductPage()">
+        <img src="assets/logo/Add.png" style="width: 32px; height: 32px;">
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</div> 
+<ion-modal [isOpen]="isModalOpen">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title class="Modal-title">Product Details</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="setOpen(false)">Close</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <div *ngIf="selectedProduct">
+        <ion-img class= "Simage" [src]="selectedProduct.image" alt="Product Image"></ion-img>
+        <ion-row>
+          <ion-col class="T">Seller Name: </ion-col>
+          <ion-col> {{selectedProduct.seller}}  </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="T">Contact: </ion-col>
+          <ion-col> {{selectedProduct.contact}}  </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="T">Name: </ion-col>
+          <ion-col> {{selectedProduct.name}}  </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="T">Condition: </ion-col>
+          <ion-col> {{ selectedProduct.condition }}  </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="T">Available Time Slot: </ion-col>
+          <ion-col> {{ selectedProduct.timeSlot }}  </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="T">Available Days: </ion-col>
+          <ion-col> {{ selectedProduct.day }}  </ion-col>
+        </ion-row>
+        <ion-button class="getbutton" expand="block" (click)="addToOrders(selectedProduct)"> Get </ion-button>
 
- <div class="container" id="main-content">
-    <ion-toolbar>
-      <img class="logo" src="../../assets/logo/swaplogo.png">
-      <ion-buttons slot="end" style="margin-right:0.1px;">
-        <ion-button (click)="navigateToProductPage()">
-          <img src="assets/logo/Add.png" style="width: 32px; height: 32px;">
+      </div>
+      <div *ngIf="!selectedProduct">
+        No product selected.
+      </div>
+    </ion-content>
+  </ng-template>
+</ion-modal>
+
+<ion-content class="page-content" >
+ 
+<swiper-container (slidechange)="swiperSlideChanged($event)" [loop]="true" [pagination]="true">
+  <swiper-slide>
+    <div class="swiper-container">
+      <img src="assets/mainad.png" />
+    </div>
+  </swiper-slide>
+  <swiper-slide>
+    <div class="swiper-container">
+      <img src="assets/ad1.png" />
+    </div>
+  </swiper-slide>
+  <swiper-slide>
+    <div class="swiper-container">
+      <img src="assets/ad2.png" />
+    </div>
+  </swiper-slide>
+</swiper-container>
+
+<ion-grid>
+  <ion-row>
+    <ion-col size="6" size-md="7" size-lg="8" *ngFor="let product of products">
+      <ion-card>
+        
+        <ion-button  fill="clear" id="click-trigger"  (click)="openProductDetails(product)">
+          <ion-img [src]="product.image" alt="Product Image" class="product-image">
+           </ion-img>
         </ion-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </div> 
-  <ion-modal [isOpen]="isModalOpen">
-    <ng-template>
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>Modal</ion-title>
-          <ion-buttons slot="end">
-            <ion-button (click)="setOpen(false)">Close</ion-button>
-          </ion-buttons>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content class="ion-padding">
-        <p>
-          Hello frans chai
-        </p>
-      </ion-content>
-    </ng-template>
-  </ion-modal>
-  
-  <ion-content class="page-content" >
-   
-  <swiper-container (slidechange)="swiperSlideChanged($event)" [loop]="true" [pagination]="true">
-    <swiper-slide>
-      <div class="swiper-container">
-        <img src="assets/mainad.png" />
-      </div>
-    </swiper-slide>
-    <swiper-slide>
-      <div class="swiper-container">
-        <img src="assets/ad1.png" />
-      </div>
-    </swiper-slide>
-    <swiper-slide>
-      <div class="swiper-container">
-        <img src="assets/ad2.png" />
-      </div>
-    </swiper-slide>
-  </swiper-container>
-
-  <ion-grid>
-    <ion-row>
-      <ion-col size="6" size-md="7" size-lg="8" *ngFor="let product of products">
-        <ion-card>
-          
-          <ion-button  fill="clear" id="click-trigger"  (click)="setOpen(true)">
-            <ion-img [src]="product.image" alt="Product Image" class="product-image">
-             </ion-img>
-          </ion-button>
-          
-          
-          <ion-card-header>
-            <ion-card-title class="prod-name">{{ product.name }} 
-            </ion-card-title>
-            <ion-card-subtitle class="prod-sub">Condition: {{ product.condition }}</ion-card-subtitle>
-          </ion-card-header>
-          
-          
-          
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+        
+        
+        <ion-card-header>
+          <ion-card-title class="prod-name">{{ product.name }} 
+          </ion-card-title>
+          <ion-card-subtitle class="prod-sub">Condition: {{ product.condition }}</ion-card-subtitle>
+        </ion-card-header>
+        
+        
+        
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 </ion-content>
-
-

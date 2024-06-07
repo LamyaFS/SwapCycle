@@ -1,13 +1,22 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>orders</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">orders</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="container">
+  <ion-card >
+    <ion-card-header>
+      <ion-card-title class="Title">Orders</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let order of orders">
+          <ion-thumbnail slot="start">
+            <ion-img [src]="order.image" alt="Product Image"></ion-img>
+          </ion-thumbnail>
+          <ion-label>
+            <ion-row class="OName">{{ order.name }}</ion-row>
+            <ion-row>Seller : {{ order.seller }}</ion-row>
+            <ion-row>Contact: {{ order.contact }}</ion-row>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
