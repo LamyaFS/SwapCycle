@@ -55,17 +55,19 @@
         <ion-card>
           
           <ion-button  fill="clear" id="click-trigger"  (click)="setOpen(true)">
-            <ion-icon name="bag"></ion-icon>
+            <ion-img [src]="product.image" alt="Product Image" class="product-image">
+             </ion-img>
           </ion-button>
           
-
-          <ion-img [src]="product.image" alt="Product Image" class="product-image"></ion-img>
           
           <ion-card-header>
             <ion-card-title class="prod-name">{{ product.name }} 
             </ion-card-title>
             <ion-card-subtitle class="prod-sub">Condition: {{ product.condition }}</ion-card-subtitle>
           </ion-card-header>
+          
+          
+          
         </ion-card>
       </ion-col>
     </ion-row>
