@@ -69,18 +69,14 @@ export class ProductPage implements OnInit {
    
     const image = "";
    
-    this.addMarker(this.currentLat, this.currentLon, "My Location", "https://imgtr.ee/images/2024/06/04/b6ad2f1b595dfd441da35e3f7423d87a.png%22");
+    this.addMarker(this.currentLat, this.currentLon);
    
-    this.service = new google.maps.places.PlacesService(this.map);
-   
-    let currentLocation = { lat: this.currentLat, lng: this.currentLon };
-    
   }
-  addMarker(latitude:number, longitude:number, placeName:string, image:any){
+  addMarker(latitude:number, longitude:number){
     const marker = new google.maps.Marker({
       position:{lat: latitude, lng:longitude},
       map: this.map,
-      icon:image
+
     });
   return marker;
   }  

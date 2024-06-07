@@ -41,6 +41,10 @@
           <ion-col class="T">Available Days: </ion-col>
           <ion-col> {{ selectedProduct.day }}  </ion-col>
         </ion-row>
+        <ion-row>
+          <ion-col class="T">Location: </ion-col>
+          <ion-col> {{ selectedProduct.latitude }},{{ selectedProduct.longitude }}  </ion-col>
+        </ion-row>
     
         <ion-button class="getbutton" expand="block" (click)="addToOrders(selectedProduct)"> Get </ion-button>
         
